@@ -6,4 +6,5 @@
         include("./controller/noteController/methods/createNote.php");
     }
     else include("error.php");
+    
 ?>
