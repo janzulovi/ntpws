@@ -1,28 +1,31 @@
-<h1>Izradi novu bilješku</h1>
+<div class="container">
+    <h1>Izradi novu bilješku</h1>
+</div>
 
-<form action="./controller/noteController/methods/sendNote.php" method="post">
+<form action="./controller/noteController/methods/sendNote.php" method="post" class="form-horizontal">
     <div class="container">
-        <label for="title">Naslov</label>
-        <input type="text" name="title" id="title">
+        <label for="title" class="control-label">Naslov</label>
+        <input type="text" name="title" id="title" class="form-control">
     </div>
     <div class="container">
-        <label for="description">Opis</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <label for="description" class="control-label">Opis</label>
+        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
     </div>
     <div class="container">
-        <label for="createdBy">Kreirao/la</label>
-        <input type="text" name="createdBy" id="createdBy">
+        <label for="createdBy" class="control-label">Kreirao/la</label>
+        <input type="text" name="createdBy" id="createdBy" class="form-control">
     </div>
     <div class="container">
-        <label for="noteType">Tip bilješke</label>
-        <select name="noteType" id="noteType">
+        <label for="noteType" class="control-label">Tip bilješke</label>
+        <select name="noteType" id="noteType" class="form-control">
             <option value="Task">Task</option>
             <option value="Chore">Chore</option>
             <option value="Emergency">Emergency</option>
             <option value="Business">Business</option>
         </select>
     </div>
-    <div>
-        <button type="submit">Spremi</button><button type="reset">Izbriši</button>
+    <br>
+    <div class="container">
+        <button type="submit" class="btn btn-primary">Spremi</button><button type="reset" class="btn">Izbriši</button>
     </div>
 </form>
