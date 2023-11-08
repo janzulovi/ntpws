@@ -1,19 +1,19 @@
 <h1>Izradi novu bilješku</h1>
 
 <form action="./controller/noteController/methods/sendNote.php" method="post">
-    <div>
+    <div class="container">
         <label for="title">Naslov</label>
         <input type="text" name="title" id="title">
     </div>
-    <div>
+    <div class="container">
         <label for="description">Opis</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
     </div>
-    <div>
+    <div class="container">
         <label for="createdBy">Kreirao/la</label>
         <input type="text" name="createdBy" id="createdBy">
     </div>
-    <div>
+    <div class="container">
         <label for="noteType">Tip bilješke</label>
         <select name="noteType" id="noteType">
             <option value="Task">Task</option>
