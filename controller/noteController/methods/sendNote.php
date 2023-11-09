@@ -30,4 +30,6 @@ $postData = stream_context_create($options);
 
 $data = file_get_contents($url."note/new", false, $postData);
 
+header("Location: /ntpws/index.php?page=1");
+
 ?>
