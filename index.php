@@ -5,6 +5,12 @@ if (!isset($_GET["page"])) {
 }
 
 $page = (int)$_GET["page"];
+$id = NULL;
+
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+}
+
 
 ?>
 <!DOCTYPE html>

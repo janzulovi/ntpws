@@ -15,6 +15,7 @@ $decoded = json_decode($data);
             <th>Opis</th>
             <th>Izradio</th>
             <th>Tip poruke</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@ $decoded = json_decode($data);
             foreach($decoded as $podatak){
                 $note = new Note();
                 
+                $note->id = $podatak->id;
                 $note->title = $podatak->title;
                 $note->description = $podatak->description;
                 $note->createdBy = $podatak->createdBy;
@@ -33,6 +35,7 @@ $decoded = json_decode($data);
                         <td>'. $note->description .'</td>
                         <td>'. $note->createdBy .'</td>
                         <td>'. $note->noteType .'</td>
+                        <td><a href="./index.php?page=3&id='.$note->id.'">Details</a></td>
                     </tr>
                 ';
             }
