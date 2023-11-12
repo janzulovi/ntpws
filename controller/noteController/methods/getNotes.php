@@ -36,6 +36,7 @@ $decoded = json_decode($data);
                         <td>'. $note->createdBy .'</td>
                         <td>'. $note->noteType .'</td>
                         <td><a href="./index.php?page=3&id='.$note->id.'">Details</a></td>
+                        <td><a href="./index.php?page=4&id='.$note->id.'">Edit</a></td>
                     </tr>
                 ';
             }

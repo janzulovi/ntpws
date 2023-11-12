@@ -8,6 +8,9 @@
     elseif ($page == 3) {
         include("./controller/noteController/methods/getNote.php");
     }
+    elseif ($page == 4) {
+        include("./controller/noteController/methods/editNote.php");
+    }
     else include("error.php");
     
 ?>
