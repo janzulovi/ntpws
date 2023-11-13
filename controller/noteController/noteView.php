@@ -11,6 +11,9 @@
     elseif ($page == 4) {
         include("./controller/noteController/methods/editNote.php");
     }
+    elseif ($page == 5) {
+        include("./controller/noteController/methods/deleteNote.php");
+    }
     else include("error.php");
     
 ?>
