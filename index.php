@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 if (!isset($_GET["page"])) {
     $_GET["page"] = 1;
 }
@@ -10,7 +13,6 @@ $id = NULL;
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -28,9 +30,24 @@ if (isset($_GET["id"])) {
 <body>
     <header class="page-header">
         <nav class="container">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-left">
                 <li><a href="index.php?page=1">Naslovna</a></li>
-                <li><a href="index.php?page=2">Kreiraj novu bilješku</a></li>
+                <?php 
+                if(isset($_SESSION['control']) && $_SESSION['control'] == true){
+                    echo '<li><a href="index.php?page=2">Kreiraj novu bilješku</a></li>';
+                }
+                ?>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <?php 
+                if(isset($_SESSION['control']) && $_SESSION['control'] == true){
+                    echo '<li><a href="./controller/userController/methods/logout.php">Odjava</a></li>';
+                }
+                else {
+                    echo '<li><a href="index.php?page=6">Login</a></li>';
+                    echo '<li><a href="index.php?page=7">Registriraj se</a></li>';
+                }
+                ?>
             </ul>
         </nav>
     </header>
@@ -38,7 +55,7 @@ if (isset($_GET["id"])) {
         <?php include("./controller/noteController/noteView.php");?>
     </main>
     <footer class="modal-footer panel-footer navbar-fixed-bottom">
-        <p class="text-center">&copy; Copyright, Jerko Anzulović, Napredne tehnike programiranja web servisa, 2022./23.</p>
+        <p class="text-center">&copy; Copyright, Jerko Anzulović, Napredne tehnike programiranja web servisa, 2023./24.</p>
     </footer>
 </body>
 

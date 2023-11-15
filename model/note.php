@@ -4,8 +4,7 @@ class Note{
     public string $title;
     public string $description; 
     public string $createdBy;
-    public $createdOn;
+    public string $createdOn;
     public string $noteType;
 }
-
 ?>
