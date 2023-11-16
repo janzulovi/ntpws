@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include("../../../model/note.php");
 include("../../../apiUrl.php");
 
@@ -7,9 +8,11 @@ $note = new Note();
 
 $note->title = $_POST['title'];
 $note->description = $_POST['description'];
-$note->createdBy = $_POST['createdBy'];
+$note->createdBy = $_SESSION['user']['username'];
 $note->createdOn = time();
 $note->noteType = $_POST['noteType'];
+$note->dueDate = $_POST['dueDate'];
+$note->status = "Kreiran";
 
 
 $body = json_encode($note,JSON_UNESCAPED_UNICODE);

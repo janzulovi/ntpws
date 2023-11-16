@@ -52,7 +52,13 @@ if (isset($_GET["id"])) {
         </nav>
     </header>
     <main class="container">
-        <?php include("./controller/noteController/noteView.php");?>
+        <?php
+        if(!isset($_SESSION['user'])){
+            if($page == 6 || $page == 7) include("./controller/noteController/noteView.php");
+            else echo "<div class='container'><h1>Ulogirajte se kako bi vidjeli svoje bilješke.</h1></div>";
+        }
+        else include("./controller/noteController/noteView.php");
+        ?>
     </main>
     <footer class="modal-footer panel-footer navbar-fixed-bottom">
         <p class="text-center">&copy; Copyright, Jerko Anzulović, Napredne tehnike programiranja web servisa, 2023./24.</p>

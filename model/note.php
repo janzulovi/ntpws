@@ -6,5 +6,7 @@ class Note{
     public string $createdBy;
     public string $createdOn;
     public string $noteType;
+    public string $dueDate;
+    public string $status;
 }
 ?>

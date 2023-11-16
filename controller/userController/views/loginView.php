@@ -30,15 +30,15 @@ if($_POST['control'] == true){
     $_SESSION['control'] = $_POST['control'];
 
     if(isset($_POST['username'])){
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['user']['username'] = $_POST['username'];
     }
 
     if(isset($_POST['password'])){
-        $_SESSION['password'] = $_POST['password'];
+        $_SESSION['user']['password'] = $_POST['password'];
     }
     
     foreach ($users as $user) {
-        if($user->username == $_SESSION['username'] && $user->password == $_SESSION['password']){
+        if($user->username == $_SESSION['user']['username'] && $user->password == $_SESSION['user']['password']){
             $_SESSION['home'] = true;
             break;
         }
@@ -46,7 +46,7 @@ if($_POST['control'] == true){
 
     if(!isset($_SESSION['home']) || $_SESSION['home'] == false) {
         session_destroy();
-        echo "<div class='container'><span class='text-danger'>The user does not exist, please register.</span></div>";
+        echo "<div class='container'><span class='text-danger'>Korisnik ne postoji! Registrirajte se ili pokušajte ponovo.</span></div>";
     }
     else {
         header("Location: /ntpws/index.php?page=1");
