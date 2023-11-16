@@ -33,9 +33,7 @@ if (isset($_GET["id"])) {
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="index.php?page=1">Naslovna</a></li>
                 <?php 
-                if(isset($_SESSION['control']) && $_SESSION['control'] == true){
-                    echo '<li><a href="index.php?page=2">Kreiraj novu bilješku</a></li>';
-                }
+                echo '<li><a href="index.php?page=2">Kreiraj novu bilješku</a></li>';
                 ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -53,11 +51,7 @@ if (isset($_GET["id"])) {
     </header>
     <main class="container">
         <?php
-        if(!isset($_SESSION['user'])){
-            if($page == 6 || $page == 7) include("./controller/noteController/noteView.php");
-            else echo "<div class='container'><h1>Ulogirajte se kako bi vidjeli svoje bilješke.</h1></div>";
-        }
-        else include("./controller/noteController/noteView.php");
+        include("./controller/noteController/noteView.php");
         ?>
     </main>
     <footer class="modal-footer panel-footer navbar-fixed-bottom">

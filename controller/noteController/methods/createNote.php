@@ -1,9 +1,3 @@
-<?php
-
-if(!isset($_SESSION['user'])){
-    echo "<div class='container'><h1>Ulogirajte se kako bi vidjeli svoje bilješke.</h1></div>";
-}
-else echo '
 <div class="container">
     <h1>Izradi novu bilješku</h1>
 </div>
@@ -35,6 +29,3 @@ else echo '
         <button type="submit" class="btn btn-primary">Spremi</button><button type="reset" class="btn">Izbriši</button>
     </div>
 </form>
-
-';
-?>

@@ -8,7 +8,7 @@ $note = new Note();
 
 $note->title = $_POST['title'];
 $note->description = $_POST['description'];
-$note->createdBy = $_SESSION['user']['username'];
+$note->createdBy = "test";
 $note->createdOn = time();
 $note->noteType = $_POST['noteType'];
 $note->dueDate = $_POST['dueDate'];
