@@ -1,15 +1,15 @@
 <?php 
     if ($page == 1) {
-        include("./controller/noteController/methods/getNotes.php");
+        include("./controller/noteController/views/getNotes.php");
     } 
     elseif ($page == 2) {
-        include("./controller/noteController/methods/createNote.php");
+        include("./controller/noteController/views/createNote.php");
     }
     elseif ($page == 3) {
-        include("./controller/noteController/methods/getNote.php");
+        include("./controller/noteController/views/getNote.php");
     }
     elseif ($page == 4) {
-        include("./controller/noteController/methods/editNote.php");
+        include("./controller/noteController/views/editNote.php");
     }
     elseif ($page == 5) {
         include("./controller/noteController/methods/deleteNote.php");
